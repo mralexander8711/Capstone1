@@ -1,0 +1,107 @@
+package pigLatin;
+
+import java.util.Scanner;
+
+public class Change {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Welcome To My Pig Latin Translator");
+	
+		// get userinput
+		
+		System.out.println("What phrase are do you want to translate" );
+		String userInput= scan.nextLine();
+		
+		
+		//set word to lowercase
+		//String userInput=userInput.toLowerCase();
+		
+		// 1. get the first letter (as a string)
+		// 2. is that letter a vowel?
+		// if yes...
+		//   add way
+		// otherwise (i.e. starts w/ consonant)
+		//   move the first letter to the end
+		//   add ay
+		
+		//scan word for vowel add way at the end
+		String newuserInput;
+		String newuserInput1;
+		String secondPart;
+		String firstPart = userInput.substring(0,1);
+		int j=0;
+		j=userInput.length();
+		
+		do {
+		
+		if (isVowel(firstPart)) {
+			newuserInput = userInput + "way";
+			System.out.println(newuserInput);
+			
+		} else {
+            // used if user word in lower case starts with a vowel then add “way”
+        
+				for (int i = 0; i <= userInput.length(); i++) {     
+					if ((userInput.charAt(i) == 'a') || (userInput.charAt(i) == 'e')
+                        || (userInput.charAt(i) == 'i') || (userInput.charAt(i) == 'o')
+                        || (userInput.charAt(i) == 'u')) 
+					break;
+					
+						else {
+						
+							firstLetter = userInput.substring(i);
+							secondPart = userInput.substring(0,i);
+					} 
+					}
+                    
+                         
+                    
+                }
+        }        // used if user word starts with a consonant then moving the consonants to the
+                // end of the word with “ay”
+                    System.out.println(firstPart + secondPart + ("ay"));
+                    break;
+                
+                }
+     
+
+            // Checking to see if user wants to enter another word
+          
+            System.out.println();System.out.println("Do you want to translate another word? (y/n)");
+            System.out.println();
+            String anotherLine = scan.nextLine();
+            while (anotherLine.equals("y")||anotherLine.equals("Y"));
+		}
+		
+		
+		//if starts words consonants, move all consonants before vowel to end and add ay
+	
+	
+			
+	
+
+	
+
+
+
+		public static Boolean isVowel(String firstPart) {
+			switch (firstPart) {
+			case "a":return true;
+			case "e":
+			return true;
+			case "i":
+			return true;
+			case "o":
+			return true;
+			case "u":
+			return true;
+
+		default:
+			return false;
+		}
+
+	}
+
+}
